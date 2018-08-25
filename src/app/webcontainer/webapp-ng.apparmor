@@ -8,5 +8,5 @@
         "keep-display-on"
     ],
     "policy_version": 16.04,
-    "template": "ubuntu-webapp"
+    "template": "unconfined"
 }
