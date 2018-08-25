@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=0.1
+Version=@APPVER@
 _Name=@NAME@
 _GenericName=@GENERICNAME@
 _Comment=@COMMENT@
@@ -10,5 +10,5 @@ Exec=webapp-ng @OPTIONS@ @URL@
 Terminal=false
 Categories=Network;WebBrowser;
 X-Ubuntu-Touch=true
-X-Ubuntu-Gettext-Domain=webapp-ng
+X-Ubuntu-Gettext-Domain=@APPID@
 X-Ubuntu-Single-Instance=true
