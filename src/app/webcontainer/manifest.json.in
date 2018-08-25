@@ -1,15 +1,15 @@
 {
-    "name": "com.ubports.webappng",
-    "description": "Next WebContainer using QtWebEngine",
+    "name": "@APPID@",
+    "description": "@APPDESCR@",
     "framework": "ubuntu-sdk-16.04",
     "architecture": "@CLICK_ARCH@",
-    "title": "WebContainer Next",
+    "title": "@APPTITLE@",
     "hooks": {
-        "webapp-ng": {
+        "@APPHOOK@": {
             "apparmor": "webapp-ng.apparmor",
             "desktop": "@CMAKE_INSTALL_DATADIR@/applications/webapp-ng.desktop"
         }
     },
-    "version": "0.1",
-    "maintainer": "UBports Developers"
+    "version": "@APPVER@",
+    "maintainer": "@APPMAINT@"
 }

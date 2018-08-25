@@ -19,6 +19,21 @@ include(GNUInstallDirs)
 
 #set install paths
 if(CLICK_MODE)
+# Edit these lines...
+  set(APPID "ubportsweb.nfsprodriver")
+  set(APPDESCR "Ubports Web")
+  set(APPTITLE "Ubports Web")
+  set(APPHOOK "ubportsweb")
+  set(APPMAINT "Bjarne Roß")
+  set(APPVER "0.1")
+
+  set(NAME "Ubports Web")
+  set(GENERICNAME "Ubports Web")
+  set(COMMENT "Ubports Web")
+  set(ICON "share/webapp-ng/webcontainer/assets/icon.png")
+  set(OPTIONS "")
+  set(URL "'https://www.ubports.com'")
+#...until here
   set(CMAKE_INSTALL_PREFIX "/")
   set(CMAKE_INSTALL_BINDIR "/")
   set(CMAKE_INSTALL_FULL_DATADIR "share/")
