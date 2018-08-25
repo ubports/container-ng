@@ -58,9 +58,9 @@ WebEngineView {
             "application/x-shockwave-flash", // http://launchpad.net/bugs/1379806
         ]
     }
-    
+
     onJavaScriptDialogRequested: function(request) {
-        
+
         switch (request.type)
         {
             case JavaScriptDialogRequest.DialogTypeAlert:
@@ -69,7 +69,7 @@ WebEngineView {
                 alertDialog.message = request.message;
                 alertDialog.accept.connect(request.dialogAccept);
                 break;
-            
+
             case JavaScriptDialogRequest.DialogTypeConfirm:
                 request.accepted = true;
                 var confirmDialog = PopupUtils.open(Qt.resolvedUrl("ConfirmDialog.qml"));
@@ -77,7 +77,7 @@ WebEngineView {
                 confirmDialog.accept.connect(request.dialogAccept);
                 confirmDialog.reject.connect(request.dialogReject);
                 break;
-                
+
             case JavaScriptDialogRequest.DialogTypePrompt:
                 request.accepted = true;
                 var promptDialog = PopupUtils.open(Qt.resolvedUrl("PromptDialog.qml"));
@@ -86,9 +86,9 @@ WebEngineView {
                 promptDialog.accept.connect(request.dialogAccept);
                 promptDialog.reject.connect(request.dialogReject);
                 break;
-            
-            // did not work with JavaScriptDialogRequest.DialogTypeUnload (the default dialog was shown)    
-            //case JavaScriptDialogRequest.DialogTypeUnload: 
+
+            // did not work with JavaScriptDialogRequest.DialogTypeUnload (the default dialog was shown)
+            //case JavaScriptDialogRequest.DialogTypeUnload:
             case 3:
                 request.accepted = true;
                 var beforeUnloadDialog = PopupUtils.open(Qt.resolvedUrl("BeforeUnloadDialog.qml"));
@@ -99,9 +99,9 @@ WebEngineView {
         }
 
     }
-    
+
     onFileDialogRequested: function(request) {
-        
+
         switch (request.mode)
         {
             case FileDialogRequest.FileModeOpen:
@@ -111,7 +111,7 @@ WebEngineView {
                 fileDialogSingle.accept.connect(request.dialogAccept);
                 fileDialogSingle.reject.connect(request.dialogReject);
                 break;
-                        
+
             case FileDialogRequest.FileModeOpenMultiple:
                 request.accepted = true;
                 var fileDialogMultiple = PopupUtils.open(Qt.resolvedUrl("ContentPickerDialog.qml"));
@@ -119,15 +119,15 @@ WebEngineView {
                 fileDialogMultiple.accept.connect(request.dialogAccept);
                 fileDialogMultiple.reject.connect(request.dialogReject);
                 break;
-                
+
             case FilealogRequest.FileModeUploadFolder:
             case FileDialogRequest.FileModeSave:
                 request.accepted = false;
                 break;
         }
-        
+
     }
-    
+
     onColorDialogRequested: function(request) {
         request.accepted = true;
         var colorDialog = PopupUtils.open(Qt.resolvedUrl("ColorSelectDialog.qml"));
@@ -136,9 +136,9 @@ WebEngineView {
         colorDialog.reject.connect(request.dialogReject);
         //myDialog.visible = true;
     }
-    
+
     onAuthenticationDialogRequested: function(request) {
-        
+
         switch (request.type)
         {
             //case WebEngineAuthenticationDialogRequest.AuthenticationTypeHTTP:
@@ -151,9 +151,9 @@ WebEngineView {
             authDialog.realm = request.realm;
             authDialog.accept.connect(request.dialogAccept);
             authDialog.reject.connect(request.dialogReject);
-                
+
             break;
-            
+
             //case WebEngineAuthenticationDialogRequest.AuthenticationTypeProxy:
             case 1:
             request.accepted = false;
@@ -161,31 +161,31 @@ WebEngineView {
         }
 
     }
-    
+
      onFeaturePermissionRequested: {
-         
+
          switch(feature)
          {
              case WebEngineView.Geolocation:
-                 
+
              // TODO: we might want to store the answer to avoid requesting
              // the permission everytime the user visits this site.
              var geoPermissionDialog = PopupUtils.open(Qt.resolvedUrl("GeolocationPermissionRequest.qml"));
              geoPermissionDialog.origin = securityOrigin;
              geoPermissionDialog.feature = feature;
              break;
-             
+
              case WebEngineView.MediaAudioCapture:
              case WebEngineView.MediaVideoCapture:
              case WebEngineView.MediaAudioVideoCapture:
-                 
+
              var mediaAccessDialog = PopupUtils.open(Qt.resolvedUrl("MediaAccessDialog.qml"));
              mediaAccessDialog.origin = securityOrigin;
              mediaAccessDialog.feature = feature;
              break;
          }
     }
-    
+
      onNewViewRequested: function(request) {
 
          browser.openLinkInNewTabRequested(request.requestedUrl, false);
@@ -505,7 +505,7 @@ WebEngineView {
                 }
             }
         }
-    
+
 /*
     onFullscreenRequested: webview.fullscreen = fullscreen
 

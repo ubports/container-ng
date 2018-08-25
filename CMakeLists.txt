@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.9)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-project("webbrowser")
+project("webapp-ng")
 
 find_program(INTLTOOL_MERGE intltool-merge)
 if(NOT INTLTOOL_MERGE)
@@ -55,7 +55,7 @@ include(qt5)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 
-set(DESKTOP_FILE webbrowser-ng.desktop)
+set(DESKTOP_FILE webapp-ng.desktop)
 
 # uninstall target
 configure_file(
@@ -78,20 +78,20 @@ file(GLOB_RECURSE NON_COMPILED_SUBDIRS
      debian/tests/*
      doc/*.css doc/*.qdoc doc/*.qdocconf
      po/*.po po/*.pot
-     snap/webbrowser-ng.launcher
+     snap/webapp-ng.launcher
      src/*.js src/*.qml src/*.sci src/README
      tests/*.py tests/*.qml)
 add_custom_target(NON_COMPILED_TARGET ALL SOURCES ${NON_COMPILED_ROOT} ${NON_COMPILED_SUBDIRS})
 
 # for dh_translations to extract the domain
 # (regarding syntax consistency, see http://pad.lv/1181187)
-set (GETTEXT_PACKAGE "webbrowser-ng")
+set (GETTEXT_PACKAGE "webapp-ng")
 
 #add_subdirectory(po)
 
 #add_subdirectory(doc)
 
-install(FILES webbrowser-ng.png screenshot.png
-DESTINATION ${CMAKE_INSTALL_DATADIR}/webbrowser-ng)
+#install(FILES webapp-ng.png screenshot.png
+#DESTINATION ${CMAKE_INSTALL_DATADIR}/webapp-ng)
 
 #add_subdirectory(click-hooks)

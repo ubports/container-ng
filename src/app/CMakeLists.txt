@@ -40,11 +40,11 @@ target_link_libraries(${COMMONLIB}
 )
 
 file(GLOB QML_FILES *.qml)
-install(FILES ${QML_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/webbrowser-ng)
+install(FILES ${QML_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/webapp-ng)
 file(GLOB JS_FILES *.js)
-install(FILES ${JS_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/webbrowser-ng)
-install(DIRECTORY actions DESTINATION ${CMAKE_INSTALL_DATADIR}/webbrowser-ng
+install(FILES ${JS_FILES} DESTINATION ${CMAKE_INSTALL_DATADIR}/webapp-ng)
+install(DIRECTORY actions DESTINATION ${CMAKE_INSTALL_DATADIR}/webapp-ng
         FILES_MATCHING PATTERN *.qml)
 
-add_subdirectory(webbrowser)
-#add_subdirectory(webcontainer)
+#add_subdirectory(webbrowser)
+add_subdirectory(webcontainer)

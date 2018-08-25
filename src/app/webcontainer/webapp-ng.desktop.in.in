@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=0.1
+_Name=Ubports Web
+_GenericName=Ubports Web
+_Comment=Ubports Web
+_Keywords=Internet;WWW;Browser;Web;Explorer
+Type=Application
+Exec=webapp-ng 'https://www.ubports.com/'
+Terminal=false
+Categories=Network;WebBrowser;
+X-Ubuntu-Touch=true
+X-Ubuntu-Gettext-Domain=webapp-ng
+X-Ubuntu-Single-Instance=true
