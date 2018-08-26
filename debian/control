@@ -1,4 +1,4 @@
-Source: webbrowser-app
+Source: container-ng
 Section: x11
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
@@ -36,36 +36,7 @@ Homepage: https://launchpad.net/webbrowser-app
 Vcs-Bzr: https://code.launchpad.net/~phablet-team/webbrowser-app/trunk
 XS-Testsuite: autopkgtest
 
-Package: webbrowser-app
-Architecture: any
-Multi-Arch: foreign
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         fonts-liberation,
-         liboxideqt-qmlplugin (>= 1.19),
-         libqt5sql5-sqlite,
-         qml-module-qt-labs-folderlistmodel,
-         qml-module-qt-labs-settings,
-         qml-module-qtquick2 (>= 5.5),
-         qml-module-qtquick-layouts,
-         qml-module-qtquick-window2 (>= 5.3),
-         qml-module-qtsysteminfo,
-         qml-module-ubuntu-web (= ${binary:Version}),
-         qtdeclarative5-ubuntu-content1,
-         qtdeclarative5-ubuntu-download-manager0.1,
-         qtdeclarative5-ubuntu-ui-extras0.2,
-         qtdeclarative5-ubuntu-ui-toolkit-plugin (>= 1.3) | qtdeclarative5-ubuntu-ui-toolkit-plugin-gles (>= 1.3),
-         qtdeclarative5-unity-action-plugin,
-Replaces: webbrowser-app-assets,
-          qtdeclarative5-ubuntu-ui-extras-browser-plugin (<< 0.22),
-Conflicts: webbrowser-app-assets
-Provides: webbrowser-app-assets
-Breaks: qtdeclarative5-ubuntu-ui-extras-browser-plugin (<< 0.22)
-Description: Ubuntu web browser
- A lightweight web browser tailored for Ubuntu, based on the Oxide browser
- engine and using the Ubuntu UI components.
-
-Package: webapp-container
+Package: webapp-ng
 Architecture: any
 Multi-Arch: foreign
 Depends: ${misc:Depends},
@@ -81,8 +52,7 @@ Depends: ${misc:Depends},
          qtdeclarative5-ubuntu-download-manager0.1,
          qtdeclarative5-ubuntu-ui-toolkit-plugin (>= 1.3) | qtdeclarative5-ubuntu-ui-toolkit-plugin-gles (>= 1.3),
          qtdeclarative5-unity-action-plugin,
-         unity-webapps-qml,
-         webbrowser-app (= ${binary:Version}),
+         unity-webapps-qml
 Conflicts: ubuntu-html5-container
 Replaces: ubuntu-html5-container
 Suggests: qml-module-ubuntu-onlineaccounts-client (>= 0.3),
@@ -162,23 +132,7 @@ Description: transitional dummy package for the Ubuntu web QML module HTML docum
  in the Ubuntu.Web namespace. This package contains the public
  HTML documentation.
 
-Package: webbrowser-app-autopilot
-Architecture: all
-Multi-Arch: foreign
-Depends: ${misc:Depends},
-         autopilot-qt5,
-         content-hub-testability,
-         python3-autopilot,
-         python3-fixtures,
-         python3-psutil,
-         ubuntu-ui-toolkit-autopilot,
-         webbrowser-app (>= ${binary:Version}),
-Description: Ubuntu web browser autopilot tests
- A lightweight web browser tailored for Ubuntu, based on the Oxide browser
- engine and using the Ubuntu UI components. This package contains autopilot
- tests for it.
-
-Package: webapp-container-autopilot
+Package: container-ng-autopilot
 Architecture: all
 Multi-Arch: foreign
 Depends: ${misc:Depends},

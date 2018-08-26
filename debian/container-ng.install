@@ -1,0 +1,4 @@
+usr/bin/webapp-ng
+usr/share/webapp-ng/webcontainer/
+usr/share/click/hooks/webapp-ng.hook
+usr/bin/webapp-ng-hook
