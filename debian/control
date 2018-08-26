@@ -140,7 +140,7 @@ Depends: ${misc:Depends},
          python3-autopilot,
          python3-fixtures,
          ubuntu-ui-toolkit-autopilot,
-         webapp-container (>= ${binary:Version}),
+         webapp-ng (>= ${binary:Version}),
 Description: Ubuntu web applications container autopilot tests
  A lightweight webapp container tailored for Ubuntu, based on the Oxide browser
  engine and using the Ubuntu UI components. This package contains autopilot
